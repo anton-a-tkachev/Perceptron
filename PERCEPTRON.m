@@ -1,6 +1,6 @@
 classdef PERCEPTRON < handle
     %PERCEPTRON Implements a multi-layer perceptron with sigmoid tfn
-    
+    % Copyright Anton Tkachev 2015
     %% Properties of the perceptron
     properties
         layer;    % array that defines the number of neurons in each layer
