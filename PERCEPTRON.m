@@ -1,6 +1,5 @@
 classdef PERCEPTRON < handle
     %PERCEPTRON Implements a multi-layer perceptron with sigmoid tfn
-    % Copyright Anton Tkachev 2015
     
     %% Properties of the perceptron
     properties
@@ -8,7 +7,7 @@ classdef PERCEPTRON < handle
         nLayers;  % total number of layers  
         nTrans;   % total number of transitions between the layers
         weight;   % cell of neurons' weights matrices
-        alpha;    % sigmoid coefficient
+        alpha;    % sigmoid function coefficient
     end
     
     %% Methods of the perceptron
@@ -38,7 +37,7 @@ classdef PERCEPTRON < handle
         end
         
         %% Error back propagation. Single iteration
-        function delta = backprop(obj,input,desired_output,eta)
+        function err = backprop(obj,input,desired_output,eta)
             O = cell(obj.nTrans + 1,1);
             O{1} = input;
             for i = 1 : obj.nTrans
@@ -51,6 +50,7 @@ classdef PERCEPTRON < handle
             delta = cell(obj.nTrans,1);
             
             delta{1} = -2*obj.alpha*O{1}.*(ones(N(1),1) - O{1}).*(T - O{1});
+            err = (T - O{1});
             
             for i = 2 : obj.nTrans
                 delta{i} = 2*obj.alpha*O{i}.*(ones(N(i),1) - O{i}).*(W{i-1}.'*delta{i-1});
@@ -61,7 +61,6 @@ classdef PERCEPTRON < handle
             end
             obj.weight = flip(W);
         end
-        
     end
     
     %% Transfer function methods
