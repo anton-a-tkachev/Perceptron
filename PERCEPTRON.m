@@ -40,7 +40,7 @@ classdef PERCEPTRON < handle
             out = A{obj.nLayers};
         end
         
-        %% Error back propagation. Single iteration
+        %% Error back propagation. Single sample
         function err = backprop(obj,input,desired_output,eta)
             n = obj.nTrans;
             O = cell(obj.nLayers,1);
