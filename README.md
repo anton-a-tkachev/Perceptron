@@ -3,7 +3,7 @@ Artificial Neural Network class with Back Error Propagation learning method for 
 Sigmoid transfer function.
 
 This realization is simple and effective. Unlike many other excess realizations having a separate class for a single neuron this code is based on matrix algebra since neuron layers are essentially vectors and links' weights are nothing else but matrices.
-Matrix representation of artificial neural network makes all the methods and calculations elegant and efficient at lower computation cost. Absense of many excess parameters also you a user friendly experience.
+Matrix representation of an artificial neural network makes all the methods and calculations elegant and efficient at lower computation cost. Absense of many excess parameters also you a user friendly experience.
 
 Methods
 
